@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0B0C0E" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#F5F2EA" />
+  <meta name="color-scheme" content="light" />
   <title>Imad Janbain — Applied ML Research Scientist</title>
-  <meta name="description" content="Applied ML Research Scientist specializing in deep learning and computer vision for environmental and climate data. Postdoc at CNRS M2C, Rouen." />
+  <meta name="description" content="Applied ML Research Scientist specializing in deep learning and computer vision for environmental, climate, and Earth-observation data. Based in Paris." />
   <meta name="author" content="Imad Janbain" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
@@ -28,6 +28,7 @@
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#research">Research</a>
+      <a href="#certs">Certifications</a>
       <a href="#skills">Skills</a>
       <a class="nav__cta" href="#contact">
         <span>Contact</span>
@@ -38,35 +39,54 @@
 
   <main id="top">
 
+    <!-- ========== HERO ========== -->
     <section class="hero">
       <div class="hero__inner container">
-        <div class="hero__preamble reveal">
-          <span class="pin pin--live">CNRS M2C &middot; Postdoc</span>
-          <span class="pin">Rouen, Normandy</span>
-          <span class="pin">Portfolio / 2026</span>
+
+        <div class="hero__left">
+          <div class="hero__preamble reveal">
+            <span class="pin pin--live">CNRS M2C &middot; Postdoc</span>
+            <span class="pin">Based in Paris &middot; FR</span>
+            <span class="pin">Portfolio / 2026</span>
+          </div>
+
+          <h1 class="hero__display reveal" data-stagger>
+            <span>Deep learning</span>
+            <span>and <em>computer vision</em></span>
+            <span>for environmental</span>
+            <span>data.</span>
+          </h1>
+
+          <p class="hero__lede reveal">
+            Postdoctoral Research Scientist at <strong>CNRS&nbsp;M2C</strong>,
+            working at the intersection of applied deep learning, computer vision,
+            and Earth-observation data. Five years of research on climate, hydrology,
+            and geospatial problems &mdash; from flood forecasting to Sentinel-1
+            satellite segmentation to custom loss design for extreme events.
+          </p>
+
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary" href="#work">
+              See selected work
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact">Get in touch</a>
+          </div>
         </div>
 
-        <h1 class="hero__display reveal" data-stagger>
-          <span>Deep learning</span>
-          <span>and <em>computer vision</em></span>
-          <span>for environmental</span>
-          <span>data.</span>
-        </h1>
-
-        <p class="hero__lede reveal">
-          Postdoctoral Research Scientist at <strong>CNRS&nbsp;·&nbsp;M2C</strong>,
-          working at the intersection of applied deep learning, computer vision,
-          and Earth-observation data. Five years of research on climate, hydrology,
-          and geospatial problems &mdash; from flood forecasting to Sentinel-1
-          satellite segmentation to custom loss design for extreme events.
-        </p>
-
-        <div class="hero__cta reveal">
-          <a class="btn btn--primary" href="#work">
-            See selected work
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        <div class="hero__right reveal">
+          <figure class="portrait">
+            <div class="portrait__mount">
+              <div class="portrait__glow" aria-hidden="true"></div>
+              <img src="me-hero.jpg" alt="Imad Janbain at CNRS M2C, presenting the SWOT satellite mission poster." />
+              <div class="portrait__grid" aria-hidden="true"></div>
+            </div>
+            <div class="portrait__bracket-bl" aria-hidden="true"></div>
+            <figcaption class="portrait__caption">
+              <span class="portrait__tag">↳ IMG_LOG / 2023</span>
+              <span class="portrait__sub">SWOT satellite field mission &middot; CNES / NASA / UKSA / CSA</span>
+            </figcaption>
+          </figure>
         </div>
 
         <dl class="hero__meta reveal">
@@ -80,12 +100,13 @@
           </div>
           <div>
             <dt>Based</dt>
-            <dd>Rouen, Normandy<br/>France &middot; Permis B</dd>
+            <dd>Paris, France<br/>Permis B</dd>
           </div>
         </dl>
       </div>
     </section>
 
+    <!-- ========== INSTRUMENT STRIP ========== -->
     <section class="instrument" aria-hidden="true">
       <div class="instrument__inner">
         <div class="instrument__chart">
@@ -110,6 +131,7 @@
       </div>
     </section>
 
+    <!-- ========== METRICS ========== -->
     <section class="metrics">
       <div class="container metrics__grid">
         <article class="metric reveal">
@@ -140,6 +162,7 @@
       </div>
     </section>
 
+    <!-- ========== ABOUT ========== -->
     <section class="about" id="about">
       <div class="container section">
         <header class="section__head reveal">
@@ -179,15 +202,40 @@
       </div>
     </section>
 
+    <!-- ========== WORK / PROJECTS ========== -->
     <section class="work" id="work">
       <div class="container section">
         <header class="section__head reveal">
           <span class="section__num">§ 02</span>
           <h2 class="section__title">Selected <em>work</em>.</h2>
-          <p class="section__sub">Six projects spanning time-series forecasting, computer vision, geospatial ML, and LLM-augmented document processing.</p>
+          <p class="section__sub">One institutional showcase and six projects spanning time-series forecasting, computer vision, geospatial ML, and LLM-augmented document processing.</p>
         </header>
 
         <ol class="projects">
+          <!-- ----- FEATURED: Multirisques institutional showcase ----- -->
+          <li class="project project--featured reveal">
+            <div class="project__index">00</div>
+            <div class="project__body">
+              <span class="project__ribbon">★ Institutional showcase · Université de Rouen</span>
+              <div class="project__head">
+                <h3 class="project__title">Plateforme multirisques &mdash; AI &amp; Deep Learning for Flood Simulation &amp; Forecasting</h3>
+                <span class="project__year">2021 &rarr; 2024</span>
+              </div>
+              <ul class="project__badges">
+                <li class="badge badge--ts">Time series</li>
+                <li class="badge badge--cv">Computer vision</li>
+                <li class="badge badge--geo">Geospatial</li>
+              </ul>
+              <p class="project__pitch">My PhD research featured as the flood-forecasting axis of Université de Rouen Normandie&rsquo;s <em>Plateforme multirisques</em> &mdash; the faculty&rsquo;s cross-lab showcase on multi-hazard science. Covers the full arc of the thesis: deep-learning reconstruction of historical Seine hydrology, flash-flood forecasting in small catchments, extreme-event detection with custom loss functions, and SAR-based flood segmentation. Delivered in collaboration with <strong>EDF</strong>, <strong>CEREMA</strong>, and <strong>DREAL</strong>.</p>
+              <ul class="project__stack"><li>Deep learning</li><li>Time series</li><li>Satellite imagery</li><li>Applied research</li></ul>
+              <a class="project__link project__link--featured" href="https://multirisques.univ-rouen.fr/nos-projets-de-recherche/plateforme-multirisques/inondation/" target="_blank" rel="noopener">
+                Read the institutional showcase
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </li>
+
+          <!-- ----- 01 Mini-Lookback ----- -->
           <li class="project reveal">
             <div class="project__index">01</div>
             <div class="project__body">
@@ -205,6 +253,7 @@
             </div>
           </li>
 
+          <!-- ----- 02 Historical DB Projection ----- -->
           <li class="project reveal">
             <div class="project__index">02</div>
             <div class="project__body">
@@ -222,6 +271,7 @@
             </div>
           </li>
 
+          <!-- ----- 03 Sentinel-1 ----- -->
           <li class="project reveal" data-scan="1">
             <div class="project__index">03</div>
             <div class="project__body">
@@ -239,6 +289,7 @@
             </div>
           </li>
 
+          <!-- ----- 04 LLM + OCR ----- -->
           <li class="project reveal" data-scan="1">
             <div class="project__index">04</div>
             <div class="project__body">
@@ -256,6 +307,7 @@
             </div>
           </li>
 
+          <!-- ----- 05 OCR Card ----- -->
           <li class="project reveal" data-scan="1">
             <div class="project__index">05</div>
             <div class="project__body">
@@ -272,6 +324,7 @@
             </div>
           </li>
 
+          <!-- ----- 06 Smart-Occitania ----- -->
           <li class="project reveal">
             <div class="project__index">06</div>
             <div class="project__body">
@@ -291,6 +344,7 @@
       </div>
     </section>
 
+    <!-- ========== RESEARCH ========== -->
     <section class="research" id="research">
       <div class="container section">
         <header class="section__head reveal">
@@ -374,22 +428,88 @@
                 <p class="conf__meta">Toward Interpretable Extreme-Flood Prediction &mdash; <a href="https://rst-montpellier.sciencesconf.org/658151/document" target="_blank" rel="noopener">abstract (PDF)</a></p>
               </div>
             </li>
-            <li>
-              <span class="conf__flag" aria-hidden="true">🇮🇸</span>
-              <div class="conf__body">
-                <p class="conf__title"><em>HDCRS Summer School</em> &middot; Reykjavík, Iceland</p>
-                <p class="conf__meta">2022 &mdash; IEEE GRSS / NVIDIA / ESA / University of Iceland &middot; HPC &amp; remote-sensing intensive</p>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="skills" id="skills">
+    <!-- ========== CERTIFICATIONS & PROGRAMS ========== -->
+    <section class="certs" id="certs">
       <div class="container section">
         <header class="section__head reveal">
           <span class="section__num">§ 04</span>
+          <h2 class="section__title">Certifications &amp; <em>programs</em>.</h2>
+          <p class="section__sub">Specialized training beyond the doctorate &mdash; from Earth-observation HPC at the University of Iceland to Google Cloud ML and financial analysis at London Business School.</p>
+        </header>
+
+        <!-- Featured: HDCRS Summer School -->
+        <h3 class="certs__group reveal">Featured program</h3>
+        <div class="certs__grid certs__grid--feature reveal">
+          <article class="cert cert--feature">
+            <div class="cert__head">
+              <span class="cert__badge">IEEE GRSS · Summer school</span>
+              <span class="cert__date">30 May &mdash; 2 Jun 2022 &middot; Reykjavík 🇮🇸</span>
+            </div>
+            <h3 class="cert__title">High-Performance &amp; Disruptive Computing in Remote Sensing (HDCRS)</h3>
+            <p class="cert__issuer">IEEE GRSS HDCRS Working Group &middot; University of Iceland &middot; NVIDIA &middot; ESA &middot; CNES</p>
+            <p class="cert__desc">Invited participant in the inaugural HDCRS Summer School &mdash; 19 hours of advanced instruction at the University of Iceland on high-performance computing, distributed machine learning, and disruptive AI applied to Earth-observation imagery and satellite data. Chaired by Dr.&nbsp;Gabriele Cavallaro, Prof.&nbsp;Dora Blanco Heras, and Dr.&nbsp;Jin Sun; part of the IEEE Geoscience &amp; Remote Sensing Society&rsquo;s Earth Science Informatics technical committee.</p>
+            <div class="cert__links">
+              <a href="https://www.hdc-rs.com/" target="_blank" rel="noopener">HDCRS working group ↗</a>
+              <a href="https://www.grss-ieee.org/community/groups-initiatives/high-performance-and-disruptive-computing-in-remote-sensing-hdcrs/hdcrs-summer-school-2022/" target="_blank" rel="noopener">Summer School 2022 ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Coursera certs with share links -->
+        <h3 class="certs__group reveal">Course certificates</h3>
+        <div class="certs__grid reveal">
+          <article class="cert">
+            <div class="cert__seal">LBS</div>
+            <h4 class="cert__title">Fundamentals of Financial Analysis</h4>
+            <p class="cert__issuer">London Business School &middot; via Coursera &middot; 2026</p>
+            <a class="cert__link" href="https://coursera.org/share/eb4ba2cdd820c08b53a1ec1b5684abd8" target="_blank" rel="noopener">View credential ↗</a>
+          </article>
+          <article class="cert">
+            <div class="cert__seal">GCP</div>
+            <h4 class="cert__title">Smart Analytics, Machine Learning &amp; AI on Google Cloud</h4>
+            <p class="cert__issuer">Google Cloud &middot; via Coursera &middot; 2023</p>
+            <a class="cert__link" href="https://coursera.org/share/74a0daf3fa34a6bc7d881c8001a548df" target="_blank" rel="noopener">View credential ↗</a>
+          </article>
+          <article class="cert">
+            <div class="cert__seal">GCP</div>
+            <h4 class="cert__title">Big Data &amp; Machine Learning Fundamentals</h4>
+            <p class="cert__issuer">Google Cloud &middot; via Coursera &middot; 2023</p>
+            <a class="cert__link" href="https://coursera.org/share/47148a4d3b44f6235ab0cf18d13ac360" target="_blank" rel="noopener">View credential ↗</a>
+          </article>
+        </div>
+
+        <!-- Additional training -->
+        <h3 class="certs__group reveal">Further training &amp; specializations</h3>
+        <div class="certs__grid reveal">
+          <article class="cert">
+            <div class="cert__seal">DL</div>
+            <h4 class="cert__title">Deep Learning Specialization</h4>
+            <p class="cert__issuer">DeepLearning.AI &middot; via Coursera &middot; 2021</p>
+          </article>
+          <article class="cert">
+            <div class="cert__seal">MLO</div>
+            <h4 class="cert__title">Machine Learning Engineering for Production (MLOps)</h4>
+            <p class="cert__issuer">DeepLearning.AI &middot; via Coursera &middot; 2023</p>
+          </article>
+          <article class="cert">
+            <div class="cert__seal">HPC</div>
+            <h4 class="cert__title">Multi-GPU Programming with MPI</h4>
+            <p class="cert__issuer">CRIANN &middot; Centre Régional de Normandie &middot; 2022</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="skills" id="skills">
+      <div class="container section">
+        <header class="section__head reveal">
+          <span class="section__num">§ 05</span>
           <h2 class="section__title">How I <em>work</em>.</h2>
           <p class="section__sub">Tools, frameworks, and practices I actually ship with.</p>
         </header>
@@ -448,15 +568,16 @@
       </div>
     </section>
 
+    <!-- ========== CONTACT ========== -->
     <section class="contact" id="contact">
       <div class="container section">
         <header class="section__head reveal">
-          <span class="section__num">§ 05</span>
+          <span class="section__num">§ 06</span>
           <h2 class="section__title">Get in <em>touch</em>.</h2>
         </header>
 
         <div class="contact__inner reveal">
-          <p class="contact__lede">Open to research collaborations, industry roles, and good questions &mdash; particularly where deep learning meets environmental, geospatial, or time-series data.</p>
+          <p class="contact__lede">Open to research collaborations, industry roles, and good questions &mdash; particularly where deep learning meets environmental, geospatial, or time-series data. Based in Paris, open to roles across France and Europe.</p>
           <a class="contact__email" href="mailto:imad.janbain@hotmail.com">
             <span>imad.janbain@hotmail.com</span>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -467,7 +588,6 @@
             <li><span class="channel__label">GitHub</span><a href="https://github.com/Imad-Janbain" target="_blank" rel="noopener">github.com/Imad-Janbain</a></li>
             <li><span class="channel__label">Google Scholar</span><a href="https://scholar.google.com/citations?user=lXZwbcIAAAAJ" target="_blank" rel="noopener">scholar.google.com</a></li>
             <li><span class="channel__label">ResearchGate</span><a href="https://www.researchgate.net/profile/Imad-Janbain" target="_blank" rel="noopener">researchgate.net</a></li>
-            <li><span class="channel__label">Phone</span><a href="tel:+33771831089">+33&nbsp;7 71 83 10 89</a><span class="channel__note">SMS preferred &middot; RQTH</span></li>
           </ul>
         </div>
       </div>
@@ -476,7 +596,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__mark"><span class="nav__pulse"></span>Imad Janbain &middot; Rouen, Normandy &middot; 2026</p>
+      <p class="footer__mark"><span class="nav__pulse"></span>Imad Janbain &middot; Paris, France &middot; 2026</p>
       <p class="footer__meta">Hand-coded. No trackers. No frameworks.<br/>Typeset in Instrument Serif &amp; IBM Plex.</p>
     </div>
   </footer>
