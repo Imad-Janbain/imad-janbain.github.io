@@ -1,44 +1,45 @@
 /* ============================================================================
    Imad Janbain — portfolio
-   Design: Scientific Instrument (light mode · "field notebook" · signal orange)
+   Design: Scientific Instrument (soft dark · lifted slate · electric lime)
    ========================================================================== */
 
 /* ----------------------------------------------------------------------------
    1. DESIGN TOKENS
    ---------------------------------------------------------------------------- */
 :root {
-  /* Surfaces — warm bone paper */
-  --bg:         #F5F2EA;
-  --bg-2:       #EEEADF;
-  --bg-3:       #E7E1D1;
-  --bg-raised:  #FAF7F0;
-  --bg-hover:   #E2DBC8;
+  /* Surfaces — soft dark slate (lifted from near-black) */
+  --bg:         #181B21;
+  --bg-2:       #20232B;
+  --bg-3:       #282C35;
+  --bg-raised:  #22252E;
+  --bg-hover:   #2E323C;
 
-  /* Text — deep warm ink */
-  --text:       #141311;
-  --text-2:     #4A4740;
-  --text-3:     #8A857A;
+  /* Text — warm cream on slate */
+  --text:       #EEEDE7;
+  --text-2:     #A8ABB2;
+  --text-3:     #767981;
 
   /* Rules */
-  --line:       #D8D1BF;
-  --line-2:     #C7BFA9;
+  --line:       #2C3039;
+  --line-2:     #3B404B;
 
-  /* Accent — burnt signal orange (ink-stamp) */
-  --accent:         #C4411E;
-  --accent-hi:      #A6361A;
-  --accent-soft:    rgba(196, 65, 30, 0.14);
-  --accent-glow:    rgba(196, 65, 30, 0.22);
+  /* Accent — electric lime (signal indicator) */
+  --accent:         #C6FF3D;
+  --accent-hi:      #D7FF63;
+  --accent-dim:     #92B82C;
+  --accent-soft:    rgba(198, 255, 61, 0.16);
+  --accent-glow:    rgba(198, 255, 61, 0.28);
 
-  /* Data-type semantic colors (for badges) */
-  --d-ts:    #C4411E;   /* time series — accent */
-  --d-cv:    #1E6F6E;   /* computer vision — deep teal */
-  --d-geo:   #4A5DA1;   /* geospatial — slate blue */
-  --d-llm:   #8B5A3C;   /* LLMs — warm brown */
-  --d-ctrl:  #5C5852;   /* control — muted charcoal */
+  /* Data-type semantic colors (for badges, dark-mode tuned) */
+  --d-ts:    #C6FF3D;   /* time series — accent lime */
+  --d-cv:    #FF8C42;   /* computer vision — warm orange */
+  --d-geo:   #56D3DE;   /* geospatial — cyan */
+  --d-llm:   #C490E4;   /* LLMs — violet */
+  --d-ctrl:  #8B8F95;   /* control — slate */
 
   /* Status */
-  --published: #2F6B47;
-  --showcase:  #A6361A;
+  --published: #76E5A9;
+  --showcase:  #C6FF3D;
 
   /* Typography */
   --ff-display: "Instrument Serif", "Times New Roman", Georgia, serif;
@@ -60,10 +61,10 @@
   --dur-2: 320ms;
   --dur-3: 640ms;
 
-  /* Shadow */
-  --shadow-sm: 0 1px 2px rgba(20, 19, 17, 0.04), 0 2px 6px rgba(20, 19, 17, 0.04);
-  --shadow-md: 0 6px 24px rgba(20, 19, 17, 0.08), 0 2px 8px rgba(20, 19, 17, 0.04);
-  --shadow-lg: 0 20px 60px rgba(20, 19, 17, 0.10), 0 8px 24px rgba(20, 19, 17, 0.06);
+  /* Shadow — deep shadows tuned for dark bg */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.30), 0 2px 6px rgba(0, 0, 0, 0.20);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.40), 0 2px 8px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.55), 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 /* ----------------------------------------------------------------------------
@@ -83,14 +84,14 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
   background-image:
-    radial-gradient(circle at 15% 10%, rgba(196, 65, 30, 0.025) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(74, 93, 161, 0.02) 0%, transparent 55%);
+    radial-gradient(circle at 15% 10%, rgba(198, 255, 61, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(86, 211, 222, 0.03) 0%, transparent 55%);
 }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; }
 ul, ol { list-style: none; }
-::selection { background: var(--accent); color: #FAF7F0; }
+::selection { background: var(--accent); color: var(--bg); }
 
 /* ----------------------------------------------------------------------------
    3. UTILITIES + TYPE
@@ -394,7 +395,7 @@ ul, ol { list-style: none; }
 .btn svg { width: 14px; height: 14px; }
 .btn--primary {
   background: var(--accent);
-  color: #FAF7F0;
+  color: var(--bg);
   box-shadow: 0 2px 8px var(--accent-soft);
 }
 .btn--primary:hover {
@@ -837,7 +838,7 @@ ul, ol { list-style: none; }
   padding: 4px 12px;
   margin-bottom: var(--sp-4);
   background: var(--accent);
-  color: #FAF7F0;
+  color: var(--bg);
   border-radius: 100px;
   font-family: var(--ff-mono);
   font-size: 10.5px;
@@ -947,7 +948,7 @@ ul, ol { list-style: none; }
   display: inline-flex; align-items: center;
   padding: 4px 12px;
   background: var(--accent);
-  color: #FAF7F0;
+  color: var(--bg);
   border-radius: 100px;
   font-family: var(--ff-mono);
   font-size: 10.5px;

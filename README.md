@@ -1,19 +1,14 @@
 # imad-janbain.github.io
 
-Personal portfolio — hand-coded, light-mode, editorial. No frameworks, no trackers.
+Personal portfolio — hand-coded, soft dark mode, editorial. No frameworks, no trackers.
 Deploys to GitHub Pages as a static site.
 
 ## Design
 
-**Direction:** *Paper & Signal* — scientific-instrument aesthetic on warm
-printed-paper stock. Built around the metaphor of a research notebook:
-bone-paper chassis, ink type, a single burnt-orange signal accent, precise
-monospace labels, and a signature instrument-strip visualization showing a
-time-series chart with a scan line plus a Sentinel-1 SAR pixel-tile grid.
+**Direction:** *Scientific Instrument* — soft-dark editorial console in lifted slate, with an electric-lime signal accent. Not near-black; a warmer, softer dark that keeps surfaces and type crisp without the heaviness of pure ink. Precise monospace labels, a signature instrument-strip visualization (time-series chart with a scan line and a Sentinel-1 SAR pixel-tile grid).
 
-**Palette:** `#F5F2EA` paper · `#141311` deep ink · `#C4411E` signal orange.
-Secondary data-type colors for badges (deep teal · slate blue · warm brown ·
-muted charcoal).
+**Palette:** `#181B21` slate · `#EEEDE7` warm cream · `#C6FF3D` electric lime.
+Secondary data-type colors for badges (warm orange · cyan · violet · muted slate).
 
 **Fonts:** Instrument Serif (display), IBM Plex Sans (body), IBM Plex Mono
 (labels). Served from Google Fonts.
@@ -25,7 +20,7 @@ muted charcoal).
 ├── index.html        # Single-page site with anchored sections
 ├── styles.css        # Design tokens at top; components below
 ├── script.js         # Instrument chart, pixel grid, scroll reveals, nav
-├── favicon.svg       # Signal-orange mark on paper
+├── favicon.svg       # Lime signal on slate
 ├── 404.html          # Matching 404
 ├── me-hero.jpg       # Hero portrait (SWOT satellite mission)
 ├── me-portrait.jpg   # About-section photo (conference poster session)
