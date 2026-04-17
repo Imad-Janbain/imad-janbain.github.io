@@ -1,31 +1,11 @@
 /* =============================================================================
    Imad Janbain — portfolio · script.js
-   - Generates a deterministic time-series waveform in the hero (SVG path)
-   - Runs a "scanning" highlight along it (suggests live prediction)
-   - Reveals sections on scroll via IntersectionObserver
-   - Shrinks the nav after the hero
-   No dependencies. No build step.
    ============================================================================= */
-
 (() => {
   "use strict";
 
-  /* -------------------------------------------------------------------------
-     1. Waveform generator
-     -------------------------------------------------------------------------
-     Looks like a real multi-scale time series:
-       - Smooth low-frequency trend
-       - Higher-frequency noise layered on top
-       - A few "extreme events" (spikes) — a nod to the flood-forecasting work
-     Deterministic (mulberry32 seeded) so the shape doesn't shift between loads.
-  ------------------------------------------------------------------------- */
-
-  const WAVE_WIDTH  = 1440;
-  const WAVE_HEIGHT = 420;
-  const SAMPLES     = 260;
-  const MID_Y       = WAVE_HEIGHT * 0.55;
-  const AMP_LOW     = 85;
-  const AMP_HIGH    = 28;
+  const CHART_W = 1000;
+  const CHART_H = 200;
 
   function mulberry32(seed) {
     return function () {
@@ -36,37 +16,27 @@
     };
   }
 
-  function generateSeries(seed = 7) {
+  function generateSeries({ seed, samples, yMid, ampLow, ampHigh, spikes }) {
     const rand = mulberry32(seed);
     const pts = [];
-
-    // Pick a few "extreme event" indices for spikes
-    const spikes = new Set();
-    while (spikes.size < 3) {
-      spikes.add(Math.floor(rand() * (SAMPLES - 20)) + 10);
+    const spikeSet = new Set();
+    while (spikeSet.size < spikes) {
+      spikeSet.add(Math.floor(rand() * (samples - 20)) + 10);
     }
-
     let low = 0;
     let high = 0;
-
-    for (let i = 0; i < SAMPLES; i++) {
-      low += (rand() - 0.5) * 0.25;
+    for (let i = 0; i < samples; i++) {
+      low += (rand() - 0.5) * 0.28;
       low  = Math.max(-1, Math.min(1, low * 0.985));
       high = (rand() - 0.5) * 2;
-
-      const x = (i / (SAMPLES - 1)) * WAVE_WIDTH;
-      let y  = MID_Y + low * AMP_LOW + high * AMP_HIGH;
-
-      if (spikes.has(i)) {
-        y -= 55 + rand() * 40;
-      }
-
+      const x = (i / (samples - 1)) * CHART_W;
+      let y  = yMid + low * ampLow + high * ampHigh;
+      if (spikeSet.has(i)) y -= 30 + rand() * 30;
       pts.push({ x, y });
     }
     return pts;
   }
 
-  // Catmull-Rom → cubic Bézier for smooth path
   function toSmoothPath(points) {
     if (points.length < 2) return "";
     const d = [`M ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`];
@@ -88,43 +58,52 @@
     return d.join(" ");
   }
 
-  function paintWaveform() {
-    const basePath = document.getElementById("wave-path");
-    const highlightPath = document.getElementById("wave-highlight");
-    if (!basePath || !highlightPath) return;
+  function paintInstrumentChart() {
+    const baseline = document.getElementById("inst-baseline");
+    const forecast = document.getElementById("inst-forecast");
+    if (!baseline || !forecast) return;
 
-    const pts = generateSeries(7);
-    const d = toSmoothPath(pts);
-    basePath.setAttribute("d", d);
-    highlightPath.setAttribute("d", d);
+    const basePts = generateSeries({
+      seed: 7, samples: 220, yMid: CHART_H * 0.55,
+      ampLow: 36, ampHigh: 10, spikes: 3,
+    });
+    const forePts = generateSeries({
+      seed: 42, samples: 220, yMid: CHART_H * 0.42,
+      ampLow: 30, ampHigh: 6, spikes: 1,
+    });
 
-    // Animate a bright segment traveling along the path — the "scan"
-    const totalLen = highlightPath.getTotalLength();
-    highlightPath.style.strokeDasharray = `260 ${totalLen}`;
-    highlightPath.animate(
-      [{ strokeDashoffset: totalLen }, { strokeDashoffset: -260 }],
-      { duration: 14000, iterations: Infinity, easing: "linear" }
-    );
+    baseline.setAttribute("d", toSmoothPath(basePts));
+    forecast.setAttribute("d", toSmoothPath(forePts));
   }
 
-  /* -------------------------------------------------------------------------
-     2. Scroll reveals — inverted pattern
-     -------------------------------------------------------------------------
-     Content is visible by default in the stylesheet. This function adds a
-     temporary `.is-pending` class to elements that are BELOW the fold so
-     they fade in as the user scrolls. Above-fold elements are never hidden.
-     If JS fails or is delayed, everything stays visible and the page remains
-     legible — no flash of invisible content.
-  ------------------------------------------------------------------------- */
+  function buildPixelGrid() {
+    const grid = document.getElementById("pixel-grid");
+    if (!grid) return;
+    const cols = 12;
+    const rows = 6;
+    const total = cols * rows;
+    const rand = mulberry32(3);
+    grid.innerHTML = "";
+    for (let i = 0; i < total; i++) {
+      const cell = document.createElement("div");
+      const row = Math.floor(i / cols);
+      const col = i % cols;
+      const base = (row * 0.25 + col * 0.13) % 5;
+      const jitter = rand() * 1.5;
+      const delay = (base + jitter).toFixed(2);
+      const opacity = (0.15 + rand() * 0.5).toFixed(2);
+      cell.style.animationDelay = `${delay}s`;
+      cell.style.setProperty("--px-o", opacity);
+      grid.appendChild(cell);
+    }
+  }
+
   function setupReveals() {
     const els = document.querySelectorAll(".reveal, [data-stagger]");
-
-    if (!("IntersectionObserver" in window)) return; // everything stays visible
+    if (!("IntersectionObserver" in window)) return;
 
     const vh = window.innerHeight || document.documentElement.clientHeight;
     const toObserve = [];
-
-    // Hide only elements below the fold
     els.forEach((el) => {
       const rect = el.getBoundingClientRect();
       if (rect.top >= vh * 0.9) {
@@ -147,20 +126,16 @@
     toObserve.forEach((el) => io.observe(el));
   }
 
-  /* -------------------------------------------------------------------------
-     3. Nav shrink-on-scroll
-  ------------------------------------------------------------------------- */
   function setupNav() {
     const nav = document.getElementById("nav");
     if (!nav) return;
-    const SHRINK_THRESHOLD = 40;
+    const SHRINK = 40;
     let ticking = false;
-
     function onScroll() {
       if (ticking) return;
       ticking = true;
       window.requestAnimationFrame(() => {
-        nav.classList.toggle("is-shrunk", window.scrollY > SHRINK_THRESHOLD);
+        nav.classList.toggle("is-shrunk", window.scrollY > SHRINK);
         ticking = false;
       });
     }
@@ -168,11 +143,9 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* -------------------------------------------------------------------------
-     4. Boot
-  ------------------------------------------------------------------------- */
   function init() {
-    paintWaveform();
+    paintInstrumentChart();
+    buildPixelGrid();
     setupReveals();
     setupNav();
   }

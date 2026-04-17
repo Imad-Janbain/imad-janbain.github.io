@@ -3,40 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#F2EDE4" />
-
+  <meta name="theme-color" content="#0B0C0E" />
+  <meta name="color-scheme" content="dark" />
   <title>Imad Janbain — Applied ML Research Scientist</title>
-  <meta
-    name="description"
-    content="Applied ML Research Scientist specializing in deep learning and computer vision for environmental and climate data. Postdoc at CNRS M2C, Rouen."
-  />
+  <meta name="description" content="Applied ML Research Scientist specializing in deep learning and computer vision for environmental and climate data. Postdoc at CNRS M2C, Rouen." />
   <meta name="author" content="Imad Janbain" />
-
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Imad Janbain — Applied ML Research Scientist" />
-  <meta property="og:description" content="Deep learning and computer vision for environmental and climate data. Time series · images · geospatial." />
-  <meta property="og:image" content="me-portrait.jpg" />
-
+  <meta property="og:description" content="Deep learning and computer vision for environmental and climate data." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
 
-  <!-- ============================================================
-       NAV
-       ============================================================ -->
   <header class="nav" id="nav">
     <a class="nav__mark" href="#top" aria-label="Home">
-      <img src="me-head.jpg" class="nav__avatar" alt="" aria-hidden="true" />
+      <span class="nav__pulse" aria-hidden="true"></span>
       <span class="nav__mark-name">Imad Janbain</span>
     </a>
     <nav class="nav__links" aria-label="Primary">
@@ -46,106 +31,42 @@
       <a href="#skills">Skills</a>
       <a class="nav__cta" href="#contact">
         <span>Contact</span>
-        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </nav>
   </header>
 
   <main id="top">
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
-    <section class="hero">
-      <svg class="hero__wave" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="waveFade" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%"  stop-color="#fff" stop-opacity="0"/>
-            <stop offset="15%" stop-color="#fff" stop-opacity="1"/>
-            <stop offset="85%" stop-color="#fff" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-          <mask id="waveMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="420">
-            <rect width="1440" height="420" fill="url(#waveFade)"/>
-          </mask>
-        </defs>
-        <g mask="url(#waveMask)">
-          <path id="wave-path" d="" fill="none" stroke="var(--ink)" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/>
-          <path id="wave-highlight" d="" fill="none" stroke="var(--accent)" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="240 5000" opacity="0.9"/>
-        </g>
-      </svg>
 
+    <section class="hero">
       <div class="hero__inner container">
-        <p class="eyebrow reveal">
-          <span class="eyebrow__rule"></span>
-          Imad Janbain &nbsp;·&nbsp; Portfolio
-        </p>
+        <div class="hero__preamble reveal">
+          <span class="pin pin--live">CNRS M2C &middot; Postdoc</span>
+          <span class="pin">Rouen, Normandy</span>
+          <span class="pin">Portfolio / 2026</span>
+        </div>
 
         <h1 class="hero__display reveal" data-stagger>
           <span>Deep learning</span>
           <span>and <em>computer vision</em></span>
-          <span>for environmental data.</span>
+          <span>for environmental</span>
+          <span>data.</span>
         </h1>
 
         <p class="hero__lede reveal">
-          Postdoctoral Research Scientist at <strong>CNRS&nbsp;·&nbsp;M2C</strong>, working
-          at the intersection of applied deep learning, computer vision, and Earth-observation
-          data. Five years of research on climate, hydrology, and geospatial problems &mdash;
-          from flood forecasting to Sentinel-1 satellite segmentation to custom loss design
-          for extreme events.
+          Postdoctoral Research Scientist at <strong>CNRS&nbsp;·&nbsp;M2C</strong>,
+          working at the intersection of applied deep learning, computer vision,
+          and Earth-observation data. Five years of research on climate, hydrology,
+          and geospatial problems &mdash; from flood forecasting to Sentinel-1
+          satellite segmentation to custom loss design for extreme events.
         </p>
 
         <div class="hero__cta reveal">
           <a class="btn btn--primary" href="#work">
             See selected work
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="btn btn--ghost" href="#contact">Get in touch</a>
-        </div>
-
-        <!-- Modality strip -->
-        <div class="modality reveal">
-          <p class="modality__label">What I work with</p>
-          <ul class="modality__list">
-            <li>
-              <svg viewBox="0 0 40 20" aria-hidden="true" class="modality__icon">
-                <path d="M2 14 Q6 4 10 10 T18 12 T26 6 T34 14 L38 10" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-              </svg>
-              <span class="modality__name">Time series</span>
-              <span class="modality__meta">forecasting · imputation · anomaly detection</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 40 20" aria-hidden="true" class="modality__icon">
-                <g fill="currentColor">
-                  <rect x="2"  y="4"  width="6" height="4" opacity="0.3"/>
-                  <rect x="10" y="4"  width="6" height="4" opacity="0.6"/>
-                  <rect x="18" y="4"  width="6" height="4" opacity="1"/>
-                  <rect x="26" y="4"  width="6" height="4" opacity="0.5"/>
-                  <rect x="2"  y="10" width="6" height="4" opacity="0.7"/>
-                  <rect x="10" y="10" width="6" height="4" opacity="1"/>
-                  <rect x="18" y="10" width="6" height="4" opacity="0.35"/>
-                  <rect x="26" y="10" width="6" height="4" opacity="0.85"/>
-                </g>
-              </svg>
-              <span class="modality__name">Images</span>
-              <span class="modality__meta">segmentation · OCR · detection · vision-LLM</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 40 20" aria-hidden="true" class="modality__icon">
-                <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-                  <path d="M2 6 Q10 2 20 5 T38 4" opacity="0.5"/>
-                  <path d="M2 10 Q12 6 22 10 T38 9" opacity="0.9"/>
-                  <path d="M2 14 Q11 11 23 15 T38 14" opacity="0.5"/>
-                  <circle cx="20" cy="10" r="1.3" fill="currentColor" stroke="none"/>
-                </g>
-              </svg>
-              <span class="modality__name">Geospatial</span>
-              <span class="modality__meta">SAR · Sentinel-1 · climate scenarios · mapping</span>
-            </li>
-          </ul>
         </div>
 
         <dl class="hero__meta reveal">
@@ -163,18 +84,32 @@
           </div>
         </dl>
       </div>
+    </section>
 
-      <div class="hero__scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <svg viewBox="0 0 12 24" fill="none">
-          <path d="M6 2v18M2 16l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+    <section class="instrument" aria-hidden="true">
+      <div class="instrument__inner">
+        <div class="instrument__chart">
+          <span class="instrument__label instrument__label--tl">
+            <span class="dot"></span> Time series &middot; Seine @ Rouen
+          </span>
+          <span class="instrument__label instrument__label--tr">7-day forecast</span>
+          <span class="instrument__label instrument__label--bl">1990 &mdash; 2024</span>
+          <svg class="instrument__chart-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+            <path id="inst-baseline" d="" />
+            <path id="inst-forecast" d="" />
+          </svg>
+          <div class="instrument__scan"></div>
+        </div>
+
+        <div class="instrument__pixel-panel">
+          <span class="instrument__label">
+            <span class="dot"></span> Sentinel-1 SAR
+          </span>
+          <div class="instrument__pixel-grid" id="pixel-grid"></div>
+        </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         METRICS
-         ============================================================ -->
     <section class="metrics">
       <div class="container metrics__grid">
         <article class="metric reveal">
@@ -195,19 +130,16 @@
         <article class="metric reveal">
           <span class="metric__tag">04</span>
           <p class="metric__number metric__number--flags">
-            <span class="flag" title="France">🇫🇷</span>
-            <span class="flag" title="United States">🇺🇸</span>
-            <span class="flag" title="Austria">🇦🇹</span>
-            <span class="flag" title="Iceland">🇮🇸</span>
+            <span title="France">🇫🇷</span>
+            <span title="United States">🇺🇸</span>
+            <span title="Austria">🇦🇹</span>
+            <span title="Iceland">🇮🇸</span>
           </p>
           <p class="metric__label">four countries where I&rsquo;ve presented or trained &mdash; AGU, EGU, RST, HDCRS</p>
         </article>
       </div>
     </section>
 
-    <!-- ============================================================
-         ABOUT — with photo
-         ============================================================ -->
     <section class="about" id="about">
       <div class="container section">
         <header class="section__head reveal">
@@ -216,100 +148,46 @@
         </header>
 
         <div class="about__layout">
+          <div class="about__prose reveal">
+            <p>I&rsquo;m a research scientist working at the intersection of applied deep learning and real-world data. My toolkit spans <em>time&nbsp;series</em>, <em>computer vision</em>, and geospatial modelling &mdash; and I&rsquo;ve spent the last five years putting all three to work on environmental problems.</p>
+            <p>I came to machine learning by way of engineering. I trained as a <strong>mechatronics</strong> engineer in Beirut, then moved to France for a master&rsquo;s in automation and computer science at Grenoble&nbsp;INP, where I built a Gaussian-Process forecasting model inside a model-predictive-control loop for the <strong>Smart-Occitania</strong> rural micro-grid project &mdash; predicting electricity and water demand for real deployment.</p>
+            <p>My PhD at <strong>CNRS M2C</strong> shifted me toward environmental systems. Over four years I built deep-learning pipelines for the <em>Seine River basin</em> &mdash; reconstructing decades of missing water-level records, forecasting flash floods in small catchments, designing a custom Quantile&ndash;Tail&ndash;Huber loss for extreme events, and building a semi-supervised segmentation system for Sentinel-1 SAR imagery. The work is featured on the Université de Rouen&rsquo;s <a href="https://multirisques.univ-rouen.fr/nos-projets-de-recherche/plateforme-multirisques/inondation/" target="_blank" rel="noopener">Plateforme multirisques</a>.</p>
+            <p>Today, as a postdoc, I&rsquo;m evaluating <em>Kolmogorov&ndash;Arnold Networks</em> for long-term groundwater forecasting under CMIP6 climate scenarios &mdash; the first systematic KAN&nbsp;vs.&nbsp;LSTM comparison on hydroclimatic data. On the side, I work on vision pipelines and LLM-augmented document understanding.</p>
+          </div>
+
           <figure class="about__photo reveal">
-            <div class="about__photo-frame">
-              <img src="me-portrait.jpg" alt="Imad Janbain standing next to his research poster at a scientific conference." />
+            <div class="about__photo-card">
+              <img src="me-portrait.jpg" alt="Imad Janbain at a conference poster session." />
             </div>
-            <figcaption>
-              <span class="about__photo-tag">Conference poster session 🇦🇹</span>
-              Presenting the Mini-LookBack decomposition research on the Seine River.
+            <figcaption class="about__photo-caption">
+              <span>↳ IMG_LOG</span>
+              Research poster session &middot; Vienna 🇦🇹
             </figcaption>
           </figure>
 
-          <div class="about__prose reveal">
-            <p>
-              I&rsquo;m a research scientist working at the intersection of applied deep
-              learning and real-world data. My toolkit spans <em>time&nbsp;series</em>,
-              <em>computer vision</em>, and geospatial modelling &mdash; and I&rsquo;ve
-              spent the last five years putting all three to work on environmental
-              problems.
-            </p>
-            <p>
-              I came to machine learning by way of engineering. I trained as a
-              <strong>mechatronics</strong> engineer in Beirut, then moved to France for
-              a master&rsquo;s in automation and computer science at Grenoble INP,
-              where I built a Gaussian-Process forecasting model inside a
-              model-predictive-control loop for the <strong>Smart-Occitania</strong>
-              rural micro-grid project &mdash; predicting electricity and water demand
-              for real deployment.
-            </p>
-            <p>
-              My PhD at <strong>CNRS M2C</strong> shifted me toward environmental
-              systems. Over four years I built deep-learning pipelines for the
-              <em>Seine River basin</em> &mdash; reconstructing decades of missing
-              water-level records, forecasting flash floods in small catchments,
-              designing a custom Quantile&ndash;Tail&ndash;Huber loss for extreme events,
-              and building a semi-supervised segmentation system for Sentinel-1 SAR
-              imagery. The work is featured on the Université de Rouen&rsquo;s
-              <a href="https://multirisques.univ-rouen.fr/nos-projets-de-recherche/plateforme-multirisques/inondation/" target="_blank" rel="noopener">Plateforme multirisques</a>.
-            </p>
-            <p>
-              Today, as a postdoc, I&rsquo;m evaluating
-              <em>Kolmogorov&ndash;Arnold Networks</em> for long-term groundwater
-              forecasting under CMIP6 climate scenarios &mdash; the first systematic
-              KAN&nbsp;vs.&nbsp;LSTM comparison on hydroclimatic data. On the side, I work
-              on vision pipelines and LLM-augmented document understanding.
-            </p>
-          </div>
-
-          <aside class="about__facts reveal">
+          <aside class="about__facts reveal" style="grid-column: 1 / -1;">
             <ul>
-              <li>
-                <span class="fact__label">Currently</span>
-                <span class="fact__value">Postdoc at CNRS M2C &mdash; KAN for CMIP6 groundwater forecasting</span>
-              </li>
-              <li>
-                <span class="fact__label">Previous</span>
-                <span class="fact__value">PROMES-CNRS intern &mdash; GPR + MPC for Smart-Occitania micro-grid</span>
-              </li>
-              <li>
-                <span class="fact__label">Partners</span>
-                <span class="fact__value">EDF · CEREMA · DREAL · CRIANN HPC</span>
-              </li>
-              <li>
-                <span class="fact__label">Field work</span>
-                <span class="fact__value">SWOT satellite validation &mdash; in-situ sensor installation</span>
-              </li>
-              <li>
-                <span class="fact__label">Trained at</span>
-                <span class="fact__value">IEEE / NVIDIA / ESA HDCRS school &mdash; Reykjavík 🇮🇸, 2022</span>
-              </li>
-              <li>
-                <span class="fact__label">Languages</span>
-                <span class="fact__value">French &amp; English (fluent) · Arabic (native)</span>
-              </li>
+              <li><span class="fact__label">Currently</span><span class="fact__value">Postdoc at CNRS M2C &mdash; KAN for CMIP6 groundwater forecasting</span></li>
+              <li><span class="fact__label">Previous</span><span class="fact__value">PROMES-CNRS intern &mdash; GPR + MPC for Smart-Occitania micro-grid</span></li>
+              <li><span class="fact__label">Partners</span><span class="fact__value">EDF · CEREMA · DREAL · CRIANN HPC</span></li>
+              <li><span class="fact__label">Field work</span><span class="fact__value">SWOT satellite validation &mdash; in-situ sensor installation</span></li>
+              <li><span class="fact__label">Trained at</span><span class="fact__value">IEEE / NVIDIA / ESA HDCRS school &mdash; Reykjavík 🇮🇸, 2022</span></li>
+              <li><span class="fact__label">Languages</span><span class="fact__value">French &amp; English (fluent) · Arabic (native)</span></li>
             </ul>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         WORK — broader project set, correct repo names, modality badges
-         ============================================================ -->
     <section class="work" id="work">
       <div class="container section">
         <header class="section__head reveal">
           <span class="section__num">§ 02</span>
           <h2 class="section__title">Selected <em>work</em>.</h2>
-          <p class="section__sub">
-            Six projects spanning time-series forecasting, computer vision, geospatial
-            ML, and LLM-augmented document processing.
-          </p>
+          <p class="section__sub">Six projects spanning time-series forecasting, computer vision, geospatial ML, and LLM-augmented document processing.</p>
         </header>
 
         <ol class="projects">
-          <!-- 01 — Mini-Lookback -->
           <li class="project reveal">
             <div class="project__index">01</div>
             <div class="project__body">
@@ -321,31 +199,12 @@
                 <li class="badge badge--ts">Time series</li>
                 <li class="badge badge--paper">Published · HSJ 2023</li>
               </ul>
-              <p class="project__pitch">
-                A production-grade Python package implementing the <em>Mini-LookBack</em>
-                decomposition I introduced in <em>Hydrological Sciences Journal</em>,
-                2023. Reshapes a long single-feature input window into a multi-feature
-                one, cutting GRU training time by <strong>96%</strong> and reducing
-                rollout error for gap-filling decades of missing Seine River water-level
-                records. Ships with a toy-data generator (tidal harmonics), Optuna
-                tuning with SQLite persistence, an auto-running data-quality gate that
-                writes markdown reports, Docker, CI/CD, and an electricity-demand
-                worked example.
-              </p>
-              <ul class="project__stack">
-                <li>Python</li><li>TensorFlow</li><li>Optuna</li><li>Docker</li>
-                <li>CI/CD</li><li>pytest</li>
-              </ul>
-              <a class="project__link" href="https://github.com/Imad-Janbain/Mini-Lookback-Strategy-for-Time-Series-Imputation-with-Deep-Learning" target="_blank" rel="noopener">
-                View on GitHub
-                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+              <p class="project__pitch">A production-grade Python package implementing the <em>Mini-LookBack</em> decomposition I introduced in <em>Hydrological Sciences Journal</em>, 2023. Reshapes a long single-feature input window into a multi-feature one, cutting GRU training time by <strong>96%</strong> and reducing rollout error for gap-filling decades of missing Seine River water-level records. Ships with a toy-data generator, Optuna tuning with SQLite persistence, an auto-running data-quality gate, Docker, CI/CD, and an electricity-demand worked example.</p>
+              <ul class="project__stack"><li>Python</li><li>TensorFlow</li><li>Optuna</li><li>Docker</li><li>CI/CD</li><li>pytest</li></ul>
+              <a class="project__link" href="https://github.com/Imad-Janbain/Mini-Lookback-Strategy-for-Time-Series-Imputation-with-Deep-Learning" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </li>
 
-          <!-- 02 — Automated Historical DB Projection -->
           <li class="project reveal">
             <div class="project__index">02</div>
             <div class="project__body">
@@ -357,31 +216,13 @@
                 <li class="badge badge--ts">Time series</li>
                 <li class="badge badge--paper">Published · Water 2023</li>
               </ul>
-              <p class="project__pitch">
-                A generalized deep-learning framework for multivariate time-series
-                imputation, based on my 2023 Seine water-quality publication
-                (<em>Water</em>&nbsp;&middot;&nbsp;MDPI). Five architectures
-                (LSTM, BiLSTM, GRU, BiGRU, CNN-BiLSTM with optional attention) and a
-                two-phase methodology &mdash; a grid of model experiments, then
-                progressive reconstruction with feasibility-gated model selection.
-                Depth-aware spatial EDA handles surface-vs-bottom probes. Units and
-                column aliases are first-class concerns.
-              </p>
-              <ul class="project__stack">
-                <li>Python</li><li>PyTorch</li><li>Attention</li><li>Matplotlib</li>
-                <li>Scikit-learn</li>
-              </ul>
-              <a class="project__link" href="https://github.com/Imad-Janbain/Automated-Historical-Database-Projection" target="_blank" rel="noopener">
-                View on GitHub
-                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+              <p class="project__pitch">A generalized deep-learning framework for multivariate time-series imputation, based on my 2023 Seine water-quality publication (<em>Water</em>&nbsp;&middot;&nbsp;MDPI). Five architectures (LSTM, BiLSTM, GRU, BiGRU, CNN-BiLSTM with optional attention) and a two-phase methodology &mdash; a grid of model experiments, then progressive reconstruction with feasibility-gated model selection. Depth-aware spatial EDA handles surface-vs-bottom probes.</p>
+              <ul class="project__stack"><li>Python</li><li>PyTorch</li><li>Attention</li><li>Matplotlib</li><li>Scikit-learn</li></ul>
+              <a class="project__link" href="https://github.com/Imad-Janbain/Automated-Historical-Database-Projection" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </li>
 
-          <!-- 03 — Sentinel-1 Flood Segmentation -->
-          <li class="project reveal">
+          <li class="project reveal" data-scan="1">
             <div class="project__index">03</div>
             <div class="project__body">
               <div class="project__head">
@@ -392,29 +233,13 @@
                 <li class="badge badge--cv">Computer vision</li>
                 <li class="badge badge--geo">Geospatial</li>
               </ul>
-              <p class="project__pitch">
-                Semi-supervised semantic segmentation of flood extent on
-                <em>Sentinel-1&nbsp;SAR</em> imagery. Built the pipeline end-to-end:
-                radar-amplitude preprocessing, a U-Net-style architecture, pseudo-labeling
-                to handle the scarcity of annotated flood masks, and IoU / F1 evaluation.
-                Self-initiated to deepen computer-vision and Earth-observation fluency
-                beyond the PhD thesis work.
-              </p>
-              <ul class="project__stack">
-                <li>Python</li><li>PyTorch</li><li>OpenCV</li>
-                <li>Sentinel-1 SAR</li><li>Semi-supervised learning</li>
-              </ul>
-              <a class="project__link" href="https://github.com/Imad-Janbain/Sentinel-1-Satellite-Flood-Segmentation-with-Deep-Learning" target="_blank" rel="noopener">
-                View on GitHub
-                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+              <p class="project__pitch">Semi-supervised semantic segmentation of flood extent on <em>Sentinel-1&nbsp;SAR</em> imagery. Built the pipeline end-to-end: radar-amplitude preprocessing, a U-Net-style architecture, pseudo-labeling to handle the scarcity of annotated flood masks, and IoU / F1 evaluation. Self-initiated to deepen computer-vision and Earth-observation fluency beyond the PhD thesis work.</p>
+              <ul class="project__stack"><li>Python</li><li>PyTorch</li><li>OpenCV</li><li>Sentinel-1 SAR</li><li>Semi-supervised learning</li></ul>
+              <a class="project__link" href="https://github.com/Imad-Janbain/Sentinel-1-Satellite-Flood-Segmentation-with-Deep-Learning" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </li>
 
-          <!-- 04 — LLM-OCR -->
-          <li class="project reveal">
+          <li class="project reveal" data-scan="1">
             <div class="project__index">04</div>
             <div class="project__body">
               <div class="project__head">
@@ -425,29 +250,13 @@
                 <li class="badge badge--llm">LLMs &amp; NLP</li>
                 <li class="badge badge--cv">Computer vision</li>
               </ul>
-              <p class="project__pitch">
-                Layered a large language model on top of a classical OCR pipeline to
-                turn raw character streams into <em>structured, queryable</em>
-                representations. Demonstrates an end-to-end vision&rarr;NLP flow:
-                image detection &amp; OCR extract the raw text, then an LLM normalizes,
-                classifies, and reasons over the output. Built to stay fluent with
-                modern multimodal ML patterns.
-              </p>
-              <ul class="project__stack">
-                <li>Python</li><li>LLM APIs</li><li>Prompt engineering</li>
-                <li>Structured output</li>
-              </ul>
-              <a class="project__link" href="https://github.com/Imad-Janbain/LLM-for-Understanding-OCR-Extracted-Information" target="_blank" rel="noopener">
-                View on GitHub
-                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+              <p class="project__pitch">Layered a large language model on top of a classical OCR pipeline to turn raw character streams into <em>structured, queryable</em> representations. Demonstrates an end-to-end vision&rarr;NLP flow: image detection &amp; OCR extract the raw text, then an LLM normalizes, classifies, and reasons over the output. Built to stay fluent with modern multimodal ML patterns.</p>
+              <ul class="project__stack"><li>Python</li><li>LLM APIs</li><li>Prompt engineering</li><li>Structured output</li></ul>
+              <a class="project__link" href="https://github.com/Imad-Janbain/LLM-for-Understanding-OCR-Extracted-Information" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </li>
 
-          <!-- 05 — OCR Card Extraction -->
-          <li class="project reveal">
+          <li class="project reveal" data-scan="1">
             <div class="project__index">05</div>
             <div class="project__body">
               <div class="project__head">
@@ -457,26 +266,12 @@
               <ul class="project__badges">
                 <li class="badge badge--cv">Computer vision</li>
               </ul>
-              <p class="project__pitch">
-                End-to-end pipeline for extracting structured fields from credit-card
-                images. An <em>R-CNN</em> localizes the card in the frame, OpenCV
-                handles perspective correction and text-region detection, and Tesseract
-                reads the fields. One of the first computer-vision projects I shipped
-                outside a lab environment.
-              </p>
-              <ul class="project__stack">
-                <li>Python</li><li>R-CNN</li><li>OpenCV</li><li>Tesseract</li>
-              </ul>
-              <a class="project__link" href="https://github.com/Imad-Janbain/OCR-Card-Information-Extraction" target="_blank" rel="noopener">
-                View on GitHub
-                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+              <p class="project__pitch">End-to-end pipeline for extracting structured fields from credit-card images. An <em>R-CNN</em> localizes the card in the frame, OpenCV handles perspective correction and text-region detection, and Tesseract reads the fields. One of the first computer-vision projects I shipped outside a lab environment.</p>
+              <ul class="project__stack"><li>Python</li><li>R-CNN</li><li>OpenCV</li><li>Tesseract</li></ul>
+              <a class="project__link" href="https://github.com/Imad-Janbain/OCR-Card-Information-Extraction" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </li>
 
-          <!-- 06 — Smart Grid -->
           <li class="project reveal">
             <div class="project__index">06</div>
             <div class="project__body">
@@ -488,64 +283,35 @@
                 <li class="badge badge--ts">Time series</li>
                 <li class="badge badge--control">Control systems</li>
               </ul>
-              <p class="project__pitch">
-                Research internship at <em>PROMES-CNRS</em> on the Smart-Occitania
-                project: forecasting electricity and water demand in rural
-                micro-grids with <em>Gaussian Process Regression</em>, with predictions
-                feeding a Model-Predictive-Control dispatch loop. My first
-                industrial-oriented ML project and the bridge from my mechatronics
-                background into applied machine learning.
-              </p>
-              <ul class="project__stack">
-                <li>Python</li><li>Gaussian Processes</li><li>MPC</li>
-                <li>Scikit-learn</li>
-              </ul>
+              <p class="project__pitch">Research internship at <em>PROMES-CNRS</em> on the Smart-Occitania project: forecasting electricity and water demand in rural micro-grids with <em>Gaussian Process Regression</em>, with predictions feeding a Model-Predictive-Control dispatch loop. My first industrial-oriented ML project and the bridge from my mechatronics background into applied machine learning.</p>
+              <ul class="project__stack"><li>Python</li><li>Gaussian Processes</li><li>MPC</li><li>Scikit-learn</li></ul>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ============================================================
-         RESEARCH — expanded with institutional page, thesis, RST, flags
-         ============================================================ -->
     <section class="research" id="research">
       <div class="container section">
         <header class="section__head reveal">
           <span class="section__num">§ 03</span>
           <h2 class="section__title">Research &amp; <em>publications</em>.</h2>
-          <p class="section__sub">
-            Peer-reviewed papers, the PhD thesis, institutional showcases, and conference work.
-          </p>
+          <p class="section__sub">Peer-reviewed papers, the PhD thesis, institutional showcases, and conference work.</p>
         </header>
 
         <h3 class="pubs__group reveal">Published papers</h3>
         <ul class="pubs">
           <li class="pub reveal">
             <span class="pub__status pub__status--published">Published</span>
-            <h4 class="pub__title">
-              Use of Long Short-Term Memory Network (LSTM) in the Reconstruction of Missing Water-Level Data in the River Seine
-            </h4>
-            <p class="pub__meta">
-              Janbain, Deloffre, Jardani, Vu &amp; Massei &middot;
-              <em>Hydrological Sciences Journal</em>, 68(10), 2023
-            </p>
-            <a class="pub__link" href="https://doi.org/10.1080/02626667.2023.2221791" target="_blank" rel="noopener">
-              DOI: 10.1080/02626667.2023.2221791
-            </a>
+            <h4 class="pub__title">Use of Long Short-Term Memory Network (LSTM) in the Reconstruction of Missing Water-Level Data in the River Seine</h4>
+            <p class="pub__meta">Janbain, Deloffre, Jardani, Vu &amp; Massei &middot; <em>Hydrological Sciences Journal</em>, 68(10), 2023</p>
+            <a class="pub__link" href="https://doi.org/10.1080/02626667.2023.2221791" target="_blank" rel="noopener">DOI: 10.1080/02626667.2023.2221791</a>
           </li>
           <li class="pub reveal">
             <span class="pub__status pub__status--published">Published</span>
-            <h4 class="pub__title">
-              Deep Learning Approaches for Numerical Modeling and Historical Reconstruction of Water-Quality Parameters in the Lower Seine
-            </h4>
-            <p class="pub__meta">
-              Janbain, Jardani, Deloffre &amp; Massei &middot;
-              <em>Water &mdash; MDPI</em>, 15(9), 2023
-            </p>
-            <a class="pub__link" href="https://doi.org/10.3390/w15091773" target="_blank" rel="noopener">
-              DOI: 10.3390/w15091773
-            </a>
+            <h4 class="pub__title">Deep Learning Approaches for Numerical Modeling and Historical Reconstruction of Water-Quality Parameters in the Lower Seine</h4>
+            <p class="pub__meta">Janbain, Jardani, Deloffre &amp; Massei &middot; <em>Water &mdash; MDPI</em>, 15(9), 2023</p>
+            <a class="pub__link" href="https://doi.org/10.3390/w15091773" target="_blank" rel="noopener">DOI: 10.3390/w15091773</a>
           </li>
         </ul>
 
@@ -553,28 +319,15 @@
         <ul class="pubs">
           <li class="pub reveal">
             <span class="pub__status pub__status--showcase">Featured 🇫🇷</span>
-            <h4 class="pub__title">
-              AI &amp; Deep Learning for Flood Simulation and Forecasting in the Seine &amp; Metropolitan Rivers
-            </h4>
-            <p class="pub__meta">
-              Janbain, Massei &amp; Jardani &middot;
-              <em>Plateforme multirisques</em>, Université de Rouen Normandie
-            </p>
-            <a class="pub__link" href="https://multirisques.univ-rouen.fr/nos-projets-de-recherche/plateforme-multirisques/inondation/" target="_blank" rel="noopener">
-              Read the institutional showcase
-            </a>
+            <h4 class="pub__title">AI &amp; Deep Learning for Flood Simulation and Forecasting in the Seine &amp; Metropolitan Rivers</h4>
+            <p class="pub__meta">Janbain, Massei &amp; Jardani &middot; <em>Plateforme multirisques</em>, Université de Rouen Normandie</p>
+            <a class="pub__link" href="https://multirisques.univ-rouen.fr/nos-projets-de-recherche/plateforme-multirisques/inondation/" target="_blank" rel="noopener">Read the institutional showcase</a>
           </li>
           <li class="pub reveal">
             <span class="pub__status pub__status--showcase">PhD thesis 🇫🇷</span>
-            <h4 class="pub__title">
-              Applied Deep Learning for the Seine River &mdash; Reconstruction, Forecasting &amp; Extreme-Event Detection
-            </h4>
-            <p class="pub__meta">
-              Defended at Université de Rouen Normandie &middot; HAL archive
-            </p>
-            <a class="pub__link" href="https://inria.hal.science/tel-04999758/" target="_blank" rel="noopener">
-              HAL: tel-04999758
-            </a>
+            <h4 class="pub__title">Applied Deep Learning for the Seine River &mdash; Reconstruction, Forecasting &amp; Extreme-Event Detection</h4>
+            <p class="pub__meta">Defended at Université de Rouen Normandie &middot; HAL archive</p>
+            <a class="pub__link" href="https://inria.hal.science/tel-04999758/" target="_blank" rel="noopener">HAL: tel-04999758</a>
           </li>
         </ul>
 
@@ -582,23 +335,17 @@
         <ul class="pubs">
           <li class="pub reveal">
             <span class="pub__status">Under review</span>
-            <h4 class="pub__title">
-              A Novel MSE&ndash;Quantile&ndash;Tail&ndash;Huber Loss for Extreme Flood Prediction (Seine Basin)
-            </h4>
+            <h4 class="pub__title">A Novel MSE&ndash;Quantile&ndash;Tail&ndash;Huber Loss for Extreme Flood Prediction (Seine Basin)</h4>
             <p class="pub__meta"><em>Journal of Hydrology</em></p>
           </li>
           <li class="pub reveal">
             <span class="pub__status">Under review</span>
-            <h4 class="pub__title">
-              XAI &amp; Feature Importance in Deep Learning for Extreme Flood Prediction
-            </h4>
+            <h4 class="pub__title">XAI &amp; Feature Importance in Deep Learning for Extreme Flood Prediction</h4>
             <p class="pub__meta"><em>Journal of Hydrology &mdash; Regional Studies</em></p>
           </li>
           <li class="pub reveal">
             <span class="pub__status">Under review</span>
-            <h4 class="pub__title">
-              Deep Learning for Flow-Rate Forecasting in Small Basins &mdash; Feature Engineering (Cailly, Normandy)
-            </h4>
+            <h4 class="pub__title">Deep Learning for Flow-Rate Forecasting in Small Basins &mdash; Feature Engineering (Cailly, Normandy)</h4>
             <p class="pub__meta"><em>Journal of Hydrology &mdash; Regional Studies</em></p>
           </li>
         </ul>
@@ -610,44 +357,28 @@
               <span class="conf__flag" aria-hidden="true">🇦🇹</span>
               <div class="conf__body">
                 <p class="conf__title"><em>EGU General Assembly</em> &middot; Vienna, Austria</p>
-                <p class="conf__meta">
-                  2025 &mdash; Evaluating KAN for Groundwater Forecasting
-                  <span class="conf__sep">·</span>
-                  2023 &mdash;
-                  <a href="https://doi.org/10.5194/egusphere-egu23-4970" target="_blank" rel="noopener">Mini-LookBack decomposition</a>
-                </p>
+                <p class="conf__meta">2025 &mdash; Evaluating KAN for Groundwater Forecasting<span class="conf__sep">·</span>2023 &mdash; <a href="https://doi.org/10.5194/egusphere-egu23-4970" target="_blank" rel="noopener">Mini-LookBack decomposition</a></p>
               </div>
             </li>
             <li>
               <span class="conf__flag" aria-hidden="true">🇺🇸</span>
               <div class="conf__body">
                 <p class="conf__title"><em>AGU Fall Meeting</em> &middot; San Francisco, USA</p>
-                <p class="conf__meta">
-                  2023 &mdash; Interpretable Extreme-Flood Prediction
-                  <span class="conf__sep">·</span>
-                  <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.H41V..05J/abstract" target="_blank" rel="noopener">ADS abstract</a>
-                  <span class="conf__sep">·</span>
-                  <a href="https://agu23.ipostersessions.com/default.aspx?s=19-5A-C8-B4-CB-AD-81-F6-11-5C-26-80-C3-16-FE-3B" target="_blank" rel="noopener">iPoster</a>
-                </p>
+                <p class="conf__meta">2023 &mdash; Interpretable Extreme-Flood Prediction<span class="conf__sep">·</span><a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.H41V..05J/abstract" target="_blank" rel="noopener">ADS abstract</a><span class="conf__sep">·</span><a href="https://agu23.ipostersessions.com/default.aspx?s=19-5A-C8-B4-CB-AD-81-F6-11-5C-26-80-C3-16-FE-3B" target="_blank" rel="noopener">iPoster</a></p>
               </div>
             </li>
             <li>
               <span class="conf__flag" aria-hidden="true">🇫🇷</span>
               <div class="conf__body">
                 <p class="conf__title"><em>RST &mdash; Réunion des Sciences de la Terre</em> &middot; Montpellier, France</p>
-                <p class="conf__meta">
-                  Toward Interpretable Extreme-Flood Prediction &mdash;
-                  <a href="https://rst-montpellier.sciencesconf.org/658151/document" target="_blank" rel="noopener">abstract (PDF)</a>
-                </p>
+                <p class="conf__meta">Toward Interpretable Extreme-Flood Prediction &mdash; <a href="https://rst-montpellier.sciencesconf.org/658151/document" target="_blank" rel="noopener">abstract (PDF)</a></p>
               </div>
             </li>
             <li>
               <span class="conf__flag" aria-hidden="true">🇮🇸</span>
               <div class="conf__body">
                 <p class="conf__title"><em>HDCRS Summer School</em> &middot; Reykjavík, Iceland</p>
-                <p class="conf__meta">
-                  2022 &mdash; IEEE GRSS / NVIDIA / ESA / University of Iceland &middot; HPC &amp; remote-sensing intensive
-                </p>
+                <p class="conf__meta">2022 &mdash; IEEE GRSS / NVIDIA / ESA / University of Iceland &middot; HPC &amp; remote-sensing intensive</p>
               </div>
             </li>
           </ul>
@@ -655,9 +386,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SKILLS — four broader pillars
-         ============================================================ -->
     <section class="skills" id="skills">
       <div class="container section">
         <header class="section__head reveal">
@@ -671,13 +399,10 @@
             <h3 class="pillar__title">Deep learning &amp; ML</h3>
             <ul>
               <li>PyTorch</li><li>TensorFlow / Keras</li>
-              <li>LSTM · GRU · BiLSTM</li>
-              <li>CNN · CNN-BiLSTM</li>
+              <li>LSTM · GRU · BiLSTM</li><li>CNN · CNN-BiLSTM</li>
               <li>Kolmogorov&ndash;Arnold Nets</li>
-              <li>Transformers &amp; attention</li>
-              <li>Seq2Seq &amp; encoder-decoder</li>
-              <li>Gaussian Processes</li>
-              <li>Scikit-learn</li>
+              <li>Transformers &amp; attention</li><li>Seq2Seq &amp; encoder-decoder</li>
+              <li>Gaussian Processes</li><li>Scikit-learn</li>
             </ul>
           </article>
           <article class="pillar reveal">
@@ -723,9 +448,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         CONTACT — neutral, no assumptions
-         ============================================================ -->
     <section class="contact" id="contact">
       <div class="container section">
         <header class="section__head reveal">
@@ -734,45 +456,18 @@
         </header>
 
         <div class="contact__inner reveal">
-          <p class="contact__lede">
-            Open to research collaborations, industry roles, and good questions &mdash;
-            particularly where deep learning meets environmental, geospatial, or
-            time-series data.
-          </p>
-
+          <p class="contact__lede">Open to research collaborations, industry roles, and good questions &mdash; particularly where deep learning meets environmental, geospatial, or time-series data.</p>
           <a class="contact__email" href="mailto:imad.janbain@hotmail.com">
             <span>imad.janbain@hotmail.com</span>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-
           <ul class="contact__channels">
-            <li>
-              <span class="channel__label">Institutional</span>
-              <a href="mailto:imad.janbain@univ-rouen.fr">imad.janbain@univ-rouen.fr</a>
-            </li>
-            <li>
-              <span class="channel__label">LinkedIn</span>
-              <a href="https://www.linkedin.com/in/imad-janbain-885948225/" target="_blank" rel="noopener">linkedin.com/in/imad-janbain</a>
-            </li>
-            <li>
-              <span class="channel__label">GitHub</span>
-              <a href="https://github.com/Imad-Janbain" target="_blank" rel="noopener">github.com/Imad-Janbain</a>
-            </li>
-            <li>
-              <span class="channel__label">Google Scholar</span>
-              <a href="https://scholar.google.com/citations?user=lXZwbcIAAAAJ" target="_blank" rel="noopener">scholar.google.com</a>
-            </li>
-            <li>
-              <span class="channel__label">ResearchGate</span>
-              <a href="https://www.researchgate.net/profile/Imad-Janbain" target="_blank" rel="noopener">researchgate.net</a>
-            </li>
-            <li>
-              <span class="channel__label">Phone</span>
-              <a href="tel:+33771831089">+33&nbsp;7 71 83 10 89</a>
-              <span class="channel__note">SMS preferred &middot; RQTH</span>
-            </li>
+            <li><span class="channel__label">Institutional</span><a href="mailto:imad.janbain@univ-rouen.fr">imad.janbain@univ-rouen.fr</a></li>
+            <li><span class="channel__label">LinkedIn</span><a href="https://www.linkedin.com/in/imad-janbain-885948225/" target="_blank" rel="noopener">linkedin.com/in/imad-janbain</a></li>
+            <li><span class="channel__label">GitHub</span><a href="https://github.com/Imad-Janbain" target="_blank" rel="noopener">github.com/Imad-Janbain</a></li>
+            <li><span class="channel__label">Google Scholar</span><a href="https://scholar.google.com/citations?user=lXZwbcIAAAAJ" target="_blank" rel="noopener">scholar.google.com</a></li>
+            <li><span class="channel__label">ResearchGate</span><a href="https://www.researchgate.net/profile/Imad-Janbain" target="_blank" rel="noopener">researchgate.net</a></li>
+            <li><span class="channel__label">Phone</span><a href="tel:+33771831089">+33&nbsp;7 71 83 10 89</a><span class="channel__note">SMS preferred &middot; RQTH</span></li>
           </ul>
         </div>
       </div>
@@ -781,14 +476,8 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__mark">
-        <span class="footer__dot"></span>
-        Imad Janbain &middot; Rouen, Normandy &middot; 2026
-      </p>
-      <p class="footer__meta">
-        Hand-coded. No trackers. No frameworks.<br/>
-        Typeset in Instrument Serif &amp; IBM Plex.
-      </p>
+      <p class="footer__mark"><span class="nav__pulse"></span>Imad Janbain &middot; Rouen, Normandy &middot; 2026</p>
+      <p class="footer__meta">Hand-coded. No trackers. No frameworks.<br/>Typeset in Instrument Serif &amp; IBM Plex.</p>
     </div>
   </footer>
 
