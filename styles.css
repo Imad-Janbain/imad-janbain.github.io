@@ -831,7 +831,7 @@ ul, ol { list-style: none; }
 .about__facts ul { display: grid; gap: 0; }
 .about__facts li {
   display: grid;
-  grid-template-columns: 130px 130px 1fr;
+  grid-template-columns: 150px 130px 1fr;
   gap: var(--sp-4);
   padding: var(--sp-4) 0;
   border-bottom: 1px solid var(--line);
@@ -886,6 +886,19 @@ ul, ol { list-style: none; }
 .fact--meta .fact__year { color: var(--text-3); }
 .fact--meta .fact__value { font-size: 13.5px; color: var(--text-2); }
 .fact--meta { padding: var(--sp-3) 0; }
+
+/* Contextual / additional info — visually associated with the entry above */
+.fact--ctx {
+  border-left: 2px solid var(--accent);
+  padding-left: var(--sp-4);
+  margin-left: 4px;
+  background: linear-gradient(to right, var(--accent-soft), transparent 30%);
+}
+.fact--ctx + :not(.fact--ctx) {
+  margin-top: var(--sp-3);
+}
+.fact--ctx-first { padding-top: var(--sp-4); }
+.fact--ctx-last  { padding-bottom: var(--sp-4); border-bottom: 1px solid var(--line); }
 
 @media (max-width: 900px) {
   .about__layout { grid-template-columns: 1fr; }
