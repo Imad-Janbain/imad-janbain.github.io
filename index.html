@@ -21,11 +21,10 @@
     (function() {
       try {
         var stored = localStorage.getItem("theme");
-        if (stored === "light" || stored === "dark") {
-          document.documentElement.setAttribute("data-theme", stored);
-        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+        if (stored === "light") {
           document.documentElement.setAttribute("data-theme", "light");
         }
+        // Otherwise dark stays the default (set on <html data-theme="dark">)
       } catch (e) {}
     })();
   </script>
@@ -208,20 +207,58 @@
               Research poster session &middot; Vienna 🇦🇹
             </figcaption>
           </figure>
-
-          <aside class="about__facts reveal" style="grid-column: 1 / -1;">
-            <ul>
-              <li><span class="fact__label">Currently</span><span class="fact__value">Postdoctoral Research Scientist &middot; CNRS M2C, Université de Rouen &mdash; KAN for CMIP6 groundwater forecasting</span></li>
-              <li><span class="fact__label">Previously</span><span class="fact__value">PhD &middot; CNRS M2C, Université de Rouen &mdash; deep learning for hydrology &amp; flood forecasting; supervised research interns</span></li>
-              <li><span class="fact__label">Before that</span><span class="fact__value">Research intern &middot; PROMES-CNRS, Perpignan &mdash; GPR + MPC for the Smart-Occitania micro-grid</span></li>
-              <li><span class="fact__label">Education</span><span class="fact__value">Professional Master MISCIT (Electrical Engineering &amp; Control Systems) &middot; <a href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-electronique-energie-electrique-automatique-IFZ3DRB9/parcours-electrical-engineering-and-control-systems-miscit-2e-annee-L0B3QTVU.html" target="_blank" rel="noopener">Grenoble Alpes University ↗</a></span></li>
-              <li><span class="fact__label">Partners</span><span class="fact__value">CNRS &middot; EDF &middot; CEREMA &middot; DREAL &middot; Seine Water Agency &middot; CRIANN HPC</span></li>
-              <li><span class="fact__label">Trained at</span><span class="fact__value">IEEE / NVIDIA / ESA HDCRS school &mdash; Reykjavík 🇮🇸, 2022</span></li>
-              <li><span class="fact__label">Also</span><span class="fact__value">occasional field work &mdash; in-situ sensor deployment for SWOT calibration</span></li>
-              <li><span class="fact__label">Languages</span><span class="fact__value">French &amp; English (fluent) · Arabic (native)</span></li>
-            </ul>
-          </aside>
         </div>
+
+        <aside class="about__facts reveal">
+          <h3 class="about__facts-heading">Timeline &amp; context.</h3>
+          <ul>
+            <li>
+              <span class="fact__label">Currently</span>
+              <span class="fact__year">2024 &rarr; 2026</span>
+              <span class="fact__value"><strong>Postdoctoral Research Scientist</strong> &middot; CNRS M2C, Université de Rouen <span class="fact__sub">KAN for CMIP6 groundwater forecasting</span></span>
+            </li>
+            <li>
+              <span class="fact__label">Previously</span>
+              <span class="fact__year">2021 &rarr; 2023</span>
+              <span class="fact__value"><strong>PhD</strong> &middot; CNRS M2C, Université de Rouen <span class="fact__sub">Deep learning for hydrology &amp; flood forecasting &middot; <em>supervised research interns</em></span></span>
+            </li>
+            <li>
+              <span class="fact__label">Before that</span>
+              <span class="fact__year">2020</span>
+              <span class="fact__value"><strong>Research Intern</strong> &middot; PROMES-CNRS, Perpignan <span class="fact__sub">GPR + MPC for the Smart-Occitania micro-grid</span></span>
+            </li>
+            <li>
+              <span class="fact__label">Education</span>
+              <span class="fact__year">2019 &rarr; 2020</span>
+              <span class="fact__value"><strong>MISCIT &mdash; Professional Master</strong> &middot; <a href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-electronique-energie-electrique-automatique-IFZ3DRB9/parcours-electrical-engineering-and-control-systems-miscit-2e-annee-L0B3QTVU.html" target="_blank" rel="noopener">Grenoble Alpes University</a> <span class="fact__sub">Electrical Engineering &amp; Control Systems</span></span>
+            </li>
+            <li>
+              <span class="fact__label fact__label--continued"></span>
+              <span class="fact__year">2015 &rarr; 2020</span>
+              <span class="fact__value"><strong>Mechatronics Engineering Diploma</strong> &middot; Lebanese University (ULFG 3), Beirut</span>
+            </li>
+            <li class="fact--meta">
+              <span class="fact__label">Partners</span>
+              <span class="fact__year"></span>
+              <span class="fact__value">CNRS &middot; EDF &middot; CEREMA &middot; DREAL &middot; Seine Water Agency &middot; CRIANN HPC</span>
+            </li>
+            <li class="fact--meta">
+              <span class="fact__label">Trained at</span>
+              <span class="fact__year">2022</span>
+              <span class="fact__value">IEEE / NVIDIA / ESA HDCRS school &mdash; Reykjavík 🇮🇸</span>
+            </li>
+            <li class="fact--meta">
+              <span class="fact__label">Also</span>
+              <span class="fact__year"></span>
+              <span class="fact__value fact__value--muted">Occasional field work &mdash; in-situ sensor deployment for SWOT calibration</span>
+            </li>
+            <li class="fact--meta">
+              <span class="fact__label">Languages</span>
+              <span class="fact__year"></span>
+              <span class="fact__value">French &amp; English (fluent) &middot; Arabic (native)</span>
+            </li>
+          </ul>
+        </aside>
       </div>
     </section>
 
@@ -433,16 +470,27 @@
             <li>
               <span class="conf__flag" aria-hidden="true">🇦🇹</span>
               <div class="conf__body">
-                <p class="conf__title"><em>EGU General Assembly</em> &middot; Vienna, Austria</p>
+                <p class="conf__title"><em>EGU General Assembly 2023</em> &middot; Vienna, Austria</p>
+                <p class="conf__meta">
+                  <span class="conf__pill conf__pill--poster">Poster &middot; 2023</span>
+                  <a href="https://doi.org/10.5194/egusphere-egu23-4970" target="_blank" rel="noopener">Mini-LookBack decomposition for historical database reconstruction</a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="conf__flag" aria-hidden="true">🇦🇹</span>
+              <div class="conf__body">
+                <p class="conf__title"><em>EGU General Assembly 2026</em> &middot; Vienna, Austria</p>
                 <p class="conf__meta">
                   <span class="conf__pill">Oral &middot; 2026</span>
                   <a href="https://meetingorganizer.copernicus.org/EGU26/EGU26-21634.html" target="_blank" rel="noopener">Evaluating Kolmogorov&ndash;Arnold Networks for Groundwater Level Forecasting in Normandy</a>
                   <span class="conf__sep">·</span>
                   <span class="conf__when">Wed 6 May, 15:15 CEST &middot; Room B &middot; session HS4.10</span>
                   <span class="conf__sep">·</span>
+                  <a href="https://meetingorganizer.copernicus.org/EGU26/EGU26-21634.html" target="_blank" rel="noopener">Abstract page</a>
+                  <span class="conf__sep">·</span>
                   <a href="https://doi.org/10.5194/egusphere-egu26-21634" target="_blank" rel="noopener">DOI</a>
                 </p>
-                <p class="conf__meta conf__meta--sub">2023 &mdash; <a href="https://doi.org/10.5194/egusphere-egu23-4970" target="_blank" rel="noopener">Mini-LookBack decomposition (poster)</a></p>
               </div>
             </li>
             <li>

@@ -148,14 +148,13 @@
     const toggle = document.getElementById("themeToggle");
     if (!toggle) return;
 
-    // Resolve initial theme: stored > system > default 'dark' from HTML attr
+    // Resolve initial theme: stored preference wins; otherwise dark default
     let stored = null;
     try { stored = localStorage.getItem("theme"); } catch (e) {}
-    if (stored === "light" || stored === "dark") {
-      root.setAttribute("data-theme", stored);
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+    if (stored === "light") {
       root.setAttribute("data-theme", "light");
     }
+    // Else: dark stays the default (set on <html data-theme="dark">)
 
     toggle.addEventListener("click", () => {
       const current = root.getAttribute("data-theme") === "light" ? "light" : "dark";

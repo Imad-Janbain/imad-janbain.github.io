@@ -772,11 +772,10 @@ ul, ol { list-style: none; }
 .about__prose a:hover { border-color: var(--accent); color: var(--accent-hi); }
 
 .about__photo {
-  max-width: 300px;
+  max-width: 280px;
   width: 100%;
   justify-self: start;
-  position: sticky;
-  top: calc(var(--sp-7) + 48px);
+  align-self: start;
 }
 .about__photo-card {
   background: var(--bg-raised);
@@ -814,20 +813,31 @@ ul, ol { list-style: none; }
   margin-right: var(--sp-2);
 }
 
+/* Timeline / facts — sits OUTSIDE the about layout grid, full width, no overlap */
 .about__facts {
-  margin-top: var(--sp-7);
-  padding-top: var(--sp-6);
+  margin-top: var(--sp-9);
+  padding-top: var(--sp-7);
   border-top: 1px solid var(--line);
+}
+.about__facts-heading {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: var(--sp-6);
 }
 .about__facts ul { display: grid; gap: 0; }
 .about__facts li {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 130px 130px 1fr;
   gap: var(--sp-4);
   padding: var(--sp-4) 0;
   border-bottom: 1px solid var(--line);
   font-size: 14.5px;
   line-height: 1.5;
+  align-items: baseline;
 }
 .fact__label {
   font-family: var(--ff-mono);
@@ -837,10 +847,73 @@ ul, ol { list-style: none; }
   color: var(--text-3);
   padding-top: 2px;
 }
+.fact__label--continued::before {
+  content: "";
+  display: block;
+  width: 16px; height: 1px;
+  background: var(--line-2);
+  margin-top: 8px;
+}
+.fact__year {
+  font-family: var(--ff-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  padding-top: 2px;
+  white-space: nowrap;
+}
 .fact__value { color: var(--text); }
+.fact__value strong { font-weight: 600; }
+.fact__value a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color var(--dur-1) var(--ease);
+}
+.fact__value a:hover { border-color: var(--accent); }
+.fact__sub {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-2);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.fact__sub em {
+  color: var(--accent);
+  font-style: italic;
+}
+.fact__value--muted { color: var(--text-2); }
+.fact--meta .fact__label,
+.fact--meta .fact__year { color: var(--text-3); }
+.fact--meta .fact__value { font-size: 13.5px; color: var(--text-2); }
+.fact--meta { padding: var(--sp-3) 0; }
+
 @media (max-width: 900px) {
   .about__layout { grid-template-columns: 1fr; }
-  .about__photo { max-width: 280px; position: static; margin-top: var(--sp-4); }
+  .about__photo {
+    max-width: 280px;
+    margin-top: var(--sp-4);
+    align-self: start;
+  }
+  .about__facts li {
+    grid-template-columns: 110px 1fr;
+    gap: var(--sp-3) var(--sp-4);
+  }
+  .about__facts li .fact__year {
+    grid-column: 2;
+    margin-bottom: 4px;
+  }
+  .about__facts li .fact__value {
+    grid-column: 2;
+  }
+  .fact__label--continued { display: block; min-height: 8px; }
+}
+@media (max-width: 540px) {
+  .about__facts li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .about__facts li .fact__year,
+  .about__facts li .fact__value { grid-column: auto; }
 }
 
 /* ----------------------------------------------------------------------------
@@ -1211,6 +1284,11 @@ ul, ol { list-style: none; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+.conf__pill--poster {
+  background: transparent;
+  color: var(--text-2);
+  border-color: var(--line-2);
 }
 .conf__when {
   color: var(--text-3);
