@@ -749,11 +749,56 @@ ul, ol { list-style: none; }
 /* ----------------------------------------------------------------------------
    9. ABOUT
    ---------------------------------------------------------------------------- */
-.about__layout {
+
+/* Inline SVG flags — work everywhere (Windows, macOS, Linux), no font dependency */
+.flag {
+  display: inline-block;
+  height: 0.85em;
+  width: 1.27em; /* roughly 3:2 ratio */
+  vertical-align: -0.08em;
+  margin: 0 0.15em;
+  border-radius: 1.5px;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+}
+.metric__number--flags .flag {
+  height: 1em;
+  width: 1.5em;
+  margin: 0 0.05em;
+  vertical-align: middle;
+}
+.conf__flag .flag {
+  height: 1.05em;
+  width: 1.55em;
+  margin: 0;
+}
+.pub__status--showcase .flag,
+.cert__date .flag,
+.portrait__sub .flag,
+.fact__value .flag {
+  height: 0.9em;
+  width: 1.35em;
+}
+
+/* New 2-col split: sticky photo on LEFT, prose + timeline on RIGHT */
+.about__split {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
   gap: clamp(40px, 5vw, 80px);
   align-items: start;
+}
+.about__photo {
+  position: sticky;
+  top: calc(var(--sp-7) + 56px);
+  align-self: start;
+  width: 100%;
+  max-width: 300px;
+}
+.about__content {
+  min-width: 0; /* allow grid items to shrink properly */
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-7);
 }
 .about__prose p {
   font-size: 17.5px;
@@ -771,12 +816,6 @@ ul, ol { list-style: none; }
 }
 .about__prose a:hover { border-color: var(--accent); color: var(--accent-hi); }
 
-.about__photo {
-  max-width: 280px;
-  width: 100%;
-  justify-self: start;
-  align-self: start;
-}
 .about__photo-card {
   background: var(--bg-raised);
   border: 1px solid var(--line);
@@ -833,10 +872,10 @@ ul, ol { list-style: none; }
   display: grid;
   grid-template-columns: 150px 130px 1fr;
   gap: var(--sp-4);
-  padding: var(--sp-4) 0;
+  padding: var(--sp-3) 0;
   border-bottom: 1px solid var(--line);
   font-size: 14.5px;
-  line-height: 1.5;
+  line-height: 1.45;
   align-items: baseline;
 }
 .fact__label {
@@ -887,25 +926,55 @@ ul, ol { list-style: none; }
 .fact--meta .fact__value { font-size: 13.5px; color: var(--text-2); }
 .fact--meta { padding: var(--sp-3) 0; }
 
-/* Contextual / additional info — visually associated with the entry above */
-.fact--ctx {
+/* Contextual block — 3-column horizontal compact band */
+.fact-ctx-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-5);
+  padding: var(--sp-4) var(--sp-5);
+  margin: var(--sp-2) 0;
   border-left: 2px solid var(--accent);
-  padding-left: var(--sp-4);
-  margin-left: 4px;
-  background: linear-gradient(to right, var(--accent-soft), transparent 30%);
+  background: linear-gradient(to right, var(--accent-soft), transparent 40%);
+  border-bottom: 1px solid var(--line);
 }
-.fact--ctx + :not(.fact--ctx) {
-  margin-top: var(--sp-3);
+.fact-ctx-block .ctx-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
 }
-.fact--ctx-first { padding-top: var(--sp-4); }
-.fact--ctx-last  { padding-bottom: var(--sp-4); border-bottom: 1px solid var(--line); }
+.fact-ctx-block .ctx__label {
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.fact-ctx-block .ctx__year {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+.fact-ctx-block .ctx__value {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.fact-ctx-block .ctx__value--muted { color: var(--text-3); font-style: italic; }
+.fact-ctx-block .ctx__value strong { color: var(--text); font-weight: 500; }
+
+@media (max-width: 720px) {
+  .fact-ctx-block { grid-template-columns: 1fr; gap: var(--sp-4); padding: var(--sp-4); }
+}
 
 @media (max-width: 900px) {
-  .about__layout { grid-template-columns: 1fr; }
+  .about__split { grid-template-columns: 1fr; gap: var(--sp-5); }
   .about__photo {
-    max-width: 280px;
-    margin-top: var(--sp-4);
-    align-self: start;
+    position: static;
+    max-width: 320px;
+    margin: 0 auto var(--sp-5);
   }
   .about__facts li {
     grid-template-columns: 110px 1fr;
