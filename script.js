@@ -143,11 +143,34 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  function setupThemeToggle() {
+    const root = document.documentElement;
+    const toggle = document.getElementById("themeToggle");
+    if (!toggle) return;
+
+    // Resolve initial theme: stored > system > default 'dark' from HTML attr
+    let stored = null;
+    try { stored = localStorage.getItem("theme"); } catch (e) {}
+    if (stored === "light" || stored === "dark") {
+      root.setAttribute("data-theme", stored);
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+      root.setAttribute("data-theme", "light");
+    }
+
+    toggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  }
+
   function init() {
     paintInstrumentChart();
     buildPixelGrid();
     setupReveals();
     setupNav();
+    setupThemeToggle();
   }
 
   if (document.readyState === "loading") {
