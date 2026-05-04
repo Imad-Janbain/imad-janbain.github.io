@@ -123,7 +123,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip (not hidden) so position: sticky still works on descendants */
   background-image:
     radial-gradient(circle at 15% 10%, var(--bg-wash-1, rgba(198, 255, 61, 0.04)) 0%, transparent 50%),
     radial-gradient(circle at 85% 75%, var(--bg-wash-2, rgba(86, 211, 222, 0.03)) 0%, transparent 55%);
@@ -720,7 +720,7 @@ ul, ol { list-style: none; }
   letter-spacing: 0;
   margin-left: 6px;
 }
-.metric__number--flags { display: flex; gap: 6px; font-size: 36px; }
+.metric__number--flags { display: flex; align-items: center; gap: 0; font-size: 14px; padding: 6px 0; }
 .metric__label { font-size: 13px; line-height: 1.45; color: var(--text-2); }
 @media (max-width: 960px) { .metrics__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px) { .metrics__grid { grid-template-columns: 1fr; } }
@@ -750,34 +750,37 @@ ul, ol { list-style: none; }
    9. ABOUT
    ---------------------------------------------------------------------------- */
 
-/* Inline SVG flags — work everywhere (Windows, macOS, Linux), no font dependency */
+/* Inline SVG flags — fixed pixel sizes (not em) to avoid font-size cascade issues */
 .flag {
   display: inline-block;
-  height: 0.85em;
-  width: 1.27em; /* roughly 3:2 ratio */
-  vertical-align: -0.08em;
-  margin: 0 0.15em;
+  height: 11px;
+  width: 16px;
+  vertical-align: -1px;
+  margin: 0 2px;
   border-radius: 1.5px;
   box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.18);
   flex-shrink: 0;
 }
 .metric__number--flags .flag {
-  height: 1em;
-  width: 1.5em;
-  margin: 0 0.05em;
+  height: 20px;
+  width: 30px;
+  margin: 0 3px;
   vertical-align: middle;
+  border-radius: 2px;
 }
 .conf__flag .flag {
-  height: 1.05em;
-  width: 1.55em;
+  height: 16px;
+  width: 24px;
   margin: 0;
+  border-radius: 2px;
 }
 .pub__status--showcase .flag,
 .cert__date .flag,
 .portrait__sub .flag,
-.fact__value .flag {
-  height: 0.9em;
-  width: 1.35em;
+.fact__value .flag,
+.ctx__value .flag {
+  height: 11px;
+  width: 16px;
 }
 
 /* New 2-col split: sticky photo on LEFT, prose + timeline on RIGHT */
@@ -921,6 +924,33 @@ ul, ol { list-style: none; }
   font-style: italic;
 }
 .fact__value--muted { color: var(--text-2); }
+
+/* Education: multi-item stack — both diplomas under a single EDUCATION label */
+.fact--education .fact__value {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.fact--education .edu-item {
+  display: block;
+}
+.fact--education .edu-item__year {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-right: var(--sp-3);
+  white-space: nowrap;
+}
+.fact--education .edu-item strong {
+  font-weight: 600;
+}
+.fact--education .edu-item__where {
+  display: inline;
+  color: var(--text-2);
+  font-size: 14px;
+}
 .fact--meta .fact__label,
 .fact--meta .fact__year { color: var(--text-3); }
 .fact--meta .fact__value { font-size: 13.5px; color: var(--text-2); }
