@@ -929,74 +929,134 @@ ul, ol { list-style: none; }
 .fact--education .fact__value {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-4);
 }
 .fact--education .edu-item {
   display: block;
 }
 .fact--education .edu-item__year {
-  display: inline-block;
+  display: block;
   font-family: var(--ff-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   color: var(--accent);
-  margin-right: var(--sp-3);
-  white-space: nowrap;
+  margin-bottom: 4px;
 }
-.fact--education .edu-item strong {
+.fact--education .edu-item__title {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.fact--education .edu-item__title strong {
   font-weight: 600;
 }
 .fact--education .edu-item__where {
-  display: inline;
+  display: block;
   color: var(--text-2);
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.5;
 }
 .fact--meta .fact__label,
 .fact--meta .fact__year { color: var(--text-3); }
 .fact--meta .fact__value { font-size: 13.5px; color: var(--text-2); }
 .fact--meta { padding: var(--sp-3) 0; }
 
-/* Contextual block — 3-column horizontal compact band */
+/* Contextual block — styled like a Sentinel-1 project card with scan-sweep hover */
 .fact-ctx-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--sp-6);
+  padding: var(--sp-5) var(--sp-6);
+  margin: var(--sp-5) 0;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
+}
+.fact-ctx-block:hover {
+  background: var(--bg-raised);
+  border-color: var(--line-2);
+  border-left-color: var(--accent-hi);
+}
+
+/* Lime sweep across — matches .project[data-scan="1"] hover */
+.fact-ctx-block::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%, var(--accent-soft) 50%, transparent 100%);
+  pointer-events: none;
+  transition: left var(--dur-3) var(--ease);
+  z-index: 0;
+}
+.fact-ctx-block:hover::after { left: 100%; transition-duration: 1.2s; }
+
+.fact-ctx-block__index {
+  position: relative; z-index: 1;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 4px;
+  line-height: 1.4;
+}
+.fact-ctx-block__index small {
+  display: block;
+  color: var(--text-3);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  margin-top: 4px;
+}
+
+.fact-ctx-block__body {
+  position: relative; z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--sp-5);
-  padding: var(--sp-4) var(--sp-5);
-  margin: var(--sp-2) 0;
-  border-left: 2px solid var(--accent);
-  background: linear-gradient(to right, var(--accent-soft), transparent 40%);
-  border-bottom: 1px solid var(--line);
 }
 .fact-ctx-block .ctx-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   min-width: 0;
 }
 .fact-ctx-block .ctx__label {
   font-family: var(--ff-mono);
   font-size: 10.5px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-3);
+  font-weight: 500;
 }
 .fact-ctx-block .ctx__year {
   font-family: var(--ff-mono);
   font-size: 11px;
   color: var(--accent);
   letter-spacing: 0.06em;
-  margin-bottom: 2px;
 }
 .fact-ctx-block .ctx__value {
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--text-2);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text);
 }
-.fact-ctx-block .ctx__value--muted { color: var(--text-3); font-style: italic; }
-.fact-ctx-block .ctx__value strong { color: var(--text); font-weight: 500; }
+.fact-ctx-block .ctx__value--muted { color: var(--text-2); font-style: italic; }
+.fact-ctx-block .ctx__value strong { color: var(--text); font-weight: 600; }
 
+@media (max-width: 900px) {
+  .fact-ctx-block { grid-template-columns: 60px 1fr; padding: var(--sp-4); }
+}
 @media (max-width: 720px) {
-  .fact-ctx-block { grid-template-columns: 1fr; gap: var(--sp-4); padding: var(--sp-4); }
+  .fact-ctx-block { grid-template-columns: 1fr; }
+  .fact-ctx-block__body { grid-template-columns: 1fr; gap: var(--sp-4); }
 }
 
 @media (max-width: 900px) {
