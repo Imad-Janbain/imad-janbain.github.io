@@ -812,6 +812,17 @@ ul, ol { list-style: none; }
 .about__prose p + p { margin-top: var(--sp-5); }
 .about__prose strong { color: var(--text); font-weight: 600; }
 .about__prose em { color: var(--accent); font-style: italic; }
+
+/* Pivot paragraph — strategic positioning statement, visually flagged */
+.about__prose .about__pivot {
+  margin-top: var(--sp-6);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--bg-2);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
+}
+.about__prose .about__pivot strong { color: var(--accent); }
 .about__prose a {
   color: var(--accent);
   border-bottom: 1px solid var(--accent-soft);
@@ -1477,7 +1488,7 @@ ul, ol { list-style: none; }
    ---------------------------------------------------------------------------- */
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-left: 1px solid var(--line);
   border-top: 1px solid var(--line);
 }
@@ -1513,6 +1524,7 @@ ul, ol { list-style: none; }
   background: var(--accent);
   border-radius: 50%;
 }
+@media (max-width: 1200px) { .skills__grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 960px) { .skills__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px) { .skills__grid { grid-template-columns: 1fr; } }
 
